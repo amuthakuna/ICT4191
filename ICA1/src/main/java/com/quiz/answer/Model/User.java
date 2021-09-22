@@ -1,9 +1,15 @@
 package com.quiz.answer.Model;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+@XmlRootElement
 @Entity
 public class User {
 	@Id
@@ -13,11 +19,14 @@ public class User {
 	private String LastName;
 	private int Age;
 	
-	/*@OneToMany(mappedBy ="Owner")
+	@Transient
+	private List<Link>links=new ArrayList<Link>();
+	
+	@OneToMany(mappedBy ="Owner")
 	private List<Post>posts;
 	
 	@OneToMany(mappedBy ="CommentedBy")
-	private List<Comment>comments;*/
+	private List<Comment>comments;
 	
 	public User() {
 		
@@ -25,19 +34,22 @@ public class User {
 	
 	
 
-	public User(String userId, String emailId, String firstName, String lastName, int age, List<Post> posts,
-			List<Comment> comments) {
+	public User(String userId, String emailId, String firstName, String lastName, int age, List<Link> links, List<Post> posts, List<Comment> comments) {
 		super();
 		UserId = userId;
 		EmailId = emailId;
 		FirstName = firstName;
 		LastName = lastName;
 		Age = age;
-		//this.posts = posts;
-		//this.comments = comments;
+		this.links = links;
+		
+		this.posts = posts;
+		this.comments = comments;
 	}
 
-	/*public List<Post> getPosts() {
+
+	@JsonIgnore
+	public List<Post> getPosts() {
 		return posts;
 	}
 
@@ -48,7 +60,7 @@ public class User {
 	}
 
 
-
+	@JsonIgnore
 	public List<Comment> getComments() {
 		return comments;
 	}
@@ -57,7 +69,7 @@ public class User {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
-	}*/
+	}
 
 
 
@@ -99,6 +111,19 @@ public class User {
 
 	public void setAge(int age) {
 		Age = age;
+	}
+	
+	public List<Link> getLinks() {
+		return links;
+	}
+
+	public void setLinks(List<Link> links) {
+		this.links = links;
+	}
+
+	public void addLink(String uri, String rel) {
+		Link link=new Link(uri,rel);
+		links.add(link);
 	}
 	
 	

@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
+import com.quiz.answer.Model.Comment;
+import com.quiz.answer.Model.Post;
 import com.quiz.answer.Model.User;
 import com.quiz.answer.Repo.UserRepo;
 
@@ -27,10 +30,30 @@ public class UseController {
 		return context.findAll();
 	}
 	
+	@GetMapping("/{id}/post")
+	public List<Post> getPost(@PathVariable("id") String id) {
+		return context.findById(id).get().getPosts();
+	}
 	
 	@GetMapping("/{id}")
 	public User get(@PathVariable("id") String id){
-		return context.findById(id).get();
+		User user=context.findById(id).get();
+		
+		//"https://localhost:8080/user/1/post"
+		String postUrl=linkTo(UseController.class).slash(id).slash("post").toString();
+		user.addLink(postUrl,"Post");
+		
+		//"https://localhost:8080/user/1/comment"
+		String commentUrl=linkTo(UseController.class).slash(id).slash("comment").toString();
+		user.addLink(commentUrl,"Comment");
+		
+		
+		return user;
+	}
+	
+	@GetMapping("/{id}/comment")
+	public List<Comment> getComment(@PathVariable("id") String id) {
+		return context.findById(id).get().getComments();
 	}
 	
 	@PostMapping

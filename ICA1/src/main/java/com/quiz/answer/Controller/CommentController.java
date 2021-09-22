@@ -29,7 +29,7 @@ public class CommentController {
 	
 	
 	@GetMapping("/{id}")
-	public Comment get(@PathVariable("id") Long id){
+	public Comment getPosts(@PathVariable("id") Long id){
 		return context.findById(id).get();
 	}
 	
