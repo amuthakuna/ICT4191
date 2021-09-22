@@ -27,12 +27,24 @@ public class UseController {
 	
 	@GetMapping
 	public List<User> getAll(){
-		return context.findAll();
+		//return context.findAll();
+		List<User>array=context.findAll();
+		for(User arr:array) {
+			//"https://localhost:8080/user/1/"
+			String postUrl=linkTo(UseController.class).slash(arr.getUserId()).toString();
+			arr.addLink(postUrl,"Post");
+		}
+		return array;
 	}
 	
 	@GetMapping("/{id}/post")
 	public List<Post> getPost(@PathVariable("id") String id) {
 		return context.findById(id).get().getPosts();
+	}
+	
+	@GetMapping("/{id}/comment")
+	public List<Comment> getComment(@PathVariable("id") String id) {
+		return context.findById(id).get().getComments();
 	}
 	
 	@GetMapping("/{id}")
@@ -51,10 +63,6 @@ public class UseController {
 		return user;
 	}
 	
-	@GetMapping("/{id}/comment")
-	public List<Comment> getComment(@PathVariable("id") String id) {
-		return context.findById(id).get().getComments();
-	}
 	
 	@PostMapping
 	public void add(@RequestBody User user) {
