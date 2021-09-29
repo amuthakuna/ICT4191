@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.practice.exercise.Controller;
 
 import java.util.List;
 
@@ -12,37 +12,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Model.Course;
-import com.example.demo.Repo.CourseRepo;
+import com.practice.exercise.Model.Pharmacy;
+import com.practice.exercise.Repo.PharRepo;
 
 @RestController
-@RequestMapping("/course")
-public class CourseController {
+@RequestMapping("/pharmacy")
+public class PharmacyController {
 	@Autowired
-	private CourseRepo repo;
+	private PharRepo pharrepo;
 	
 	@GetMapping
-	public List<Course>getAll(){
-		return repo.findAll();
+	public List<Pharmacy>getAll(){
+		return pharrepo.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public Course get(@PathVariable("id") String id) {
-		return repo.findById(id).get();
+	public Pharmacy get(@PathVariable("id") String id) {
+		return pharrepo.findById(id).get();
 	}
 	
 	@PostMapping
-	public void add(@RequestBody Course course) {
-		repo.save(course);
+	public void  add(@RequestBody Pharmacy pharmacy) {
+		pharrepo.save(pharmacy);
 	}
 	
 	@PutMapping
-	public void update(@RequestBody Course course) {
-		repo.save(course);
+	public void  update(@RequestBody Pharmacy pharmacy) {
+		pharrepo.save(pharmacy);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") String id) {
-		repo.deleteById(id);
+		pharrepo.deleteById(id);
 	}
+	
+	
+
 }
