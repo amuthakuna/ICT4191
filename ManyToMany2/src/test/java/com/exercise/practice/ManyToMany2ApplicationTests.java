@@ -1,10 +1,10 @@
-package com.practice.exercise;
+package com.exercise.practice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ManyToManyExerciseApplicationTests {
+class ManyToMany2ApplicationTests {
 
 	@Test
 	void contextLoads() {

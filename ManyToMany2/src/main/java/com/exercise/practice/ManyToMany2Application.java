@@ -1,13 +1,13 @@
-package com.practice.exercise;
+package com.exercise.practice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ManyToManyExerciseApplication {
+public class ManyToMany2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ManyToManyExerciseApplication.class, args);
+		SpringApplication.run(ManyToMany2Application.class, args);
 	}
 
 }
