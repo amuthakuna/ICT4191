@@ -8,11 +8,11 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>lk.ac.vau</groupId>
-	<artifactId>ManyToMany2</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>ORMmultiplemodelexercise</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ManyToMany2</name>
-	<description>Many To Many Restful API for Spring Boot</description>
+	<name>ORMmultiplemodelexercise</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
