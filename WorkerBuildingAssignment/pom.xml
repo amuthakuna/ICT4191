@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>ORMmultiplemodelexercise</artifactId>
+	<artifactId>WorkerBuildingAssignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ORMmultiplemodelexercise</name>
+	<name>WorkerBuildingAssignment</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

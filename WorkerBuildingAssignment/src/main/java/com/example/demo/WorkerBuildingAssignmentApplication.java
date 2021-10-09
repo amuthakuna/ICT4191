@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrMmultiplemodelexerciseApplication {
+public class WorkerBuildingAssignmentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrMmultiplemodelexerciseApplication.class, args);
+		SpringApplication.run(WorkerBuildingAssignmentApplication.class, args);
 	}
 
 }

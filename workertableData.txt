@@ -1,0 +1,34 @@
+insert into Worker values(1235,'M.Faraday',12.5,'Electric',1311);
+insert into Worker values(1412,'C.Nemo',13.75,'Plumbing',1520);
+insert into Worker values(2920,'R.Garret',10,'Roofing',2920);
+insert into Worker values(3231,'P.Mason',17.4,'Framing',3231);
+insert into Worker values(1520,'H.Rickover',11.75,'Plumbing',1520);
+insert into Worker values(1311,'C.Coulomb',15.5,'Electric',1311);
+insert into Worker values(3001,'J.Barrister',8.2,'Framing',3231);
+
+insert into Building values(312,'123 Elm','Office',2,2);
+insert into Building values(435,'456 Maple','Retail',1,1);
+insert into Building values(515,'789 Oak','residence',3,1);
+insert into Building values(210,'1011 Brich','Office',3,1);
+insert into Building values(111,'1213 Aspen','Office',4,1);
+insert into Building values(460,'1415 Beech','Warehouse',3,3);
+
+insert into Assignment values(1235,312,'2016/10/10',5);
+insert into Assignment values(1412,312,'2016/10/1',10);
+insert into Assignment values(1235,515,'2016/10/17',22);
+insert into Assignment values(2920,460,'2016/10/5',18);
+insert into Assignment values(1412,460,'2016/12/8',18);
+insert into Assignment values(2920,435,'2016/10/28',10);
+insert into Assignment values(2920,210,'2016/11/10',15);
+insert into Assignment values(3231,111,'2016/10/10',8);
+insert into Assignment values(1412,435,'2016/10/15',15);
+insert into Assignment values(1412,515,'2016/11/5',8);
+insert into Assignment values(3231,312,'2016/10/24',20);
+insert into Assignment values(1520,515,'2016/10/9',14);
+insert into Assignment values(1311,435,'2016/10/8',12);
+insert into Assignment values(1412,210,'2016/11/15',12);
+insert into Assignment values(1412,111,'2016/12/1',4);
+insert into Assignment values(3001,111,'2016/10/8',14);
+insert into Assignment values(1311,460,'2016/10/23',24);
+insert into Assignment values(1520,312,'2016/10/30',17);
+insert into Assignment values(3001,210,'2016/10/27',14);
